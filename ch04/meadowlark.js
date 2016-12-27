@@ -4,7 +4,7 @@ var fortune = require('./lib/fortune.js');
 
 var app = express();
 
-//set up handlebars view engine
+// set up handlebars view engine
 var hbs = expresshbs.create({
 	defaultLayout: 'main',
 	layoutsDir: 'views/layouts',
@@ -13,11 +13,11 @@ var hbs = expresshbs.create({
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-//设置端口
+// 设置端口
 app.set('port', process.env.PORT || 3003);
-//获取端口
+// 获取端口
 var port = app.get('port');
-//静态资源路径
+// 静态资源路径
 app.use(express.static(__dirname + '/public'));
 
 /*********** 设置路由 ************/
